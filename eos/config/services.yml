@@ -1,0 +1,11 @@
+services:
+    anix.eos.listener:
+        class: anix\eos\event\main_listener
+        arguments:
+            - '@request'
+            - '@user'
+            - '@dbal.conn'
+            - '@template'
+            - '@language'
+        tags:
+            - { name: event.listener }
